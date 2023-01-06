@@ -57,12 +57,10 @@ app.MapGet("/api/kunder/{id}", (DataService service, int id) => {
 });
 
 //Poster en ny kunde
-app.MapPost("/api/post/", (DataService service, Kunde data) =>
+app.MapPost("/api/post/", (DataService service, Kunde kunde) =>
 {
-    service.CreateKunde(data.Navn, data.Email, data.Type);
+    service.CreateKunde(kunde);
 
 });
 
 app.Run();
-
-record Kunde(int Id, string Navn, string Email, string Type);
