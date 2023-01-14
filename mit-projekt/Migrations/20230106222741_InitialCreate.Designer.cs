@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace mitprojekt.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20221220101132_InitialCreate")]
+    [Migration("20230106222741_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,7 +26,6 @@ namespace mitprojekt.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Navn")
@@ -34,7 +33,6 @@ namespace mitprojekt.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

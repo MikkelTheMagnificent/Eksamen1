@@ -23,7 +23,6 @@ namespace mitprojekt.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Navn")
@@ -31,7 +30,6 @@ namespace mitprojekt.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -19,6 +19,7 @@ public class DataService
         Kunde kunde = db.Kunder.FirstOrDefault()!;
         if (kunde == null) {
             kunde = new Kunde { Navn = "Dan", Email = "dan@dandan.dk", Type = "Erhverv", Id = 1 };
+            db.Kunder.Add(kunde);
             db.Kunder.Add(new Kunde {  Navn = "Thomas", Email = "thom@thom.dk", Type = "Erhverv", Id = 2 });
             db.Kunder.Add(new Kunde {  Navn = "Bo", Email = "bo@bobo.dk", Type = "Privat", Id = 3 });
         db.SaveChanges();
@@ -43,4 +44,11 @@ public class DataService
             db.SaveChanges();
            
         }
+
+    public void DeleteKunde(int id){
+        Kunde kunde = db.Kunder.FirstOrDefault(k => k.Id == id);
+        db.Kunder.Remove(kunde);
+        db.SaveChanges();
+    }
+   
 }

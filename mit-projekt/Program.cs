@@ -63,4 +63,20 @@ app.MapPost("/api/post/", (DataService service, Kunde kunde) =>
 
 });
 
+
+app.MapDelete("/api/delete/{id}", (DataService service, int id) =>
+{
+    service.DeleteKunde(id);
+});
+
 app.Run();
+
+
+//JSON objekt til at teste create kunde endpointet med
+/*
+{
+    "Name": "Morten",
+    "Email": "morten@mortensen.dk",
+    "Type": "Erhverv"
+}
+*/
